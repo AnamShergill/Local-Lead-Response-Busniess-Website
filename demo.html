@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Book Your Strategy Call - Local Lead Response</title>
+    <meta name="description" content="Schedule your strategy call to see how our AI voice automation helps local businesses respond instantly, capture more leads, and never miss opportunities.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Demo Page Specific Styles */
+        .demo-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #061B49 0%, #0a2d6e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-bg-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(74, 158, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 122, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        
+        /* Floating particles */
+        .demo-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(74, 158, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 20s linear infinite;
+        }
+        
+        .particle:nth-child(2n) {
+            background: rgba(255, 122, 0, 0.4);
+            animation-duration: 25s;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .demo-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .demo-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .demo-info {
+            padding-top: 40px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .demo-info h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .demo-info h1 .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #4A9EFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 3s ease-in-out infinite;
+        }
+        
+        .demo-info h1 .orange-text {
+            color: #FF7A00;
+        }
+        
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .demo-info p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .trust-indicators {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInLeft 0.6s ease-out both;
+            animation-delay: calc(0.5s + var(--delay));
+            opacity: 0;
+        }
+        
+        .trust-item:nth-child(1) { --delay: 0s; }
+        .trust-item:nth-child(2) { --delay: 0.1s; }
+        .trust-item:nth-child(3) { --delay: 0.2s; }
+        .trust-item:nth-child(4) { --delay: 0.3s; }
+        
+        .trust-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 122, 0, 0.5);
+            transform: translateX(12px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(255, 122, 0, 0.2);
+        }
+        
+        .trust-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #FF7A00 0%, #ff9500 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(255, 122, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 16px rgba(255, 122, 0, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 24px rgba(255, 122, 0, 0.5); }
+        }
+        
+        .trust-text {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .demo-form-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInRight 0.8s ease-out, floatCard 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .demo-form-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(74, 158, 255, 0.1), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-header h2 {
+            font-size: 28px;
+            color: #0a2d6e;
+            margin-bottom: 8px;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        .form-header p {
+            font-size: 15px;
+            color: #4a5568;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        /* GHL Calendar Embed Styles */
+        .ghl-calendar-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 900px;
+            border-radius: 12px;
+            overflow: visible;
+            background: #ffffff;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        #ghl-calendar-iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 900px;
+            border: none;
+            border-radius: 12px;
+            background: transparent;
+        }
+        
+        /* GHL Calendar Theme Customization */
+        .ghl-calendar-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            border-radius: 12px;
+            box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.1);
+        }
+        
+        /* Calendar Loading State */
+        .calendar-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 0;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .calendar-loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(74, 158, 255, 0.2);
+            border-top-color: #4A9EFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        
+        .calendar-loading p {
+            color: #4a5568;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 0.6s ease-out both;
+            animation-delay: calc(0.7s + var(--form-delay));
+        }
+        
+        .form-group:nth-child(1) { --form-delay: 0s; }
+        .form-group:nth-child(2) { --form-delay: 0.05s; }
+        .form-group:nth-child(3) { --form-delay: 0.1s; }
+        .form-group:nth-child(4) { --form-delay: 0.15s; }
+        .form-group:nth-child(5) { --form-delay: 0.2s; }
+        .form-group:nth-child(6) { --form-delay: 0.25s; }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0a2d6e;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-label .required {
+            color: #FF7A00;
+            animation: blink 2s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: #0a2d6e;
+            background: #f8f9fa;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+            position: relative;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            background: #ffffff;
+            border-color: #4A9EFF;
+            box-shadow: 0 0 0 4px rgba(74, 158, 255, 0.1), 0 8px 24px rgba(74, 158, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .form-input:hover,
+        .form-select:hover,
+        .form-textarea:hover {
+            border-color: #4A9EFF;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #FF7A00 0%, #FF9500 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(255, 122, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out 1.2s both;
+        }
+        
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .form-submit:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(255, 122, 0, 0.4);
+        }
+        
+        .form-submit:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+        
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .success-message {
+            display: none;
+            padding: 20px;
+            background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+            color: #ffffff;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: slideDown 0.5s ease, successPulse 2s ease-in-out infinite;
+            box-shadow: 0 8px 24px rgba(0, 212, 170, 0.3);
+            position: relative;
+        }
+        
+        .success-message::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(0, 212, 170, 0.3); }
+            50% { box-shadow: 0 8px 32px rgba(0, 212, 170, 0.5); }
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .error-message {
+            display: none;
+            padding: 20px;
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            color: #ffffff;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: shake 0.5s ease, errorPulse 2s ease-in-out infinite;
+            box-shadow: 0 8px 24px rgba(244, 63, 94, 0.3);
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        @keyframes errorPulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(244, 63, 94, 0.3); }
+            50% { box-shadow: 0 8px 32px rgba(244, 63, 94, 0.5); }
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .back-link:hover {
+            color: #FF7A00;
+            transform: translateX(-8px);
+        }
+        
+        .back-link svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-link:hover svg {
+            transform: translateX(-4px);
+        }
+        
+        /* Loading spinner for submit button */
+        .form-submit.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 1024px) {
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .demo-info {
+                padding-top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 100px 16px 60px;
+            }
+            
+            .back-link {
+                margin-top: 20px;
+                margin-bottom: 28px;
+            }
+            
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .demo-info {
+                padding-top: 0;
+            }
+            
+            .demo-form-card {
+                padding: 28px 20px;
+            }
+            
+            .form-header h2 {
+                font-size: 24px;
+            }
+            
+            .form-header p {
+                font-size: 14px;
+            }
+            
+            /* Calendar Mobile Optimization */
+            .ghl-calendar-wrapper {
+                min-height: 850px;
+            }
+            
+            #ghl-calendar-iframe {
+                min-height: 850px;
+            }
+            
+            .trust-indicators {
+                gap: 12px;
+            }
+            
+            .trust-item {
+                padding: 12px 16px;
+            }
+            
+            .trust-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .trust-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY" class="nav-logo" itemscope itemtype="https://schema.org/Organization">
+                <img src="https://assets.cdn.filesafe.space/3rGU0evQBMw6QyaS6hBo/media/6a0ae7ea0a69f1e766f4d00b.png" alt="Local Lead Response" itemprop="logo">
+            </a>
+            
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY#solutions" role="menuitem">Solutions</a></li>
+                <li role="none"><a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY#pricing" role="menuitem">Pricing</a></li>
+                <li role="none"><a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY#demo" role="menuitem">Demo</a></li>
+            </ul>
+            
+            <button class="btn-primary nav-cta" onclick="window.location.href='https://app.gohighlevel.com/v2/preview/VN9queumAgSkbAmzY9EZ?notrack=true'">Get Started</button>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Page Content -->
+    <div class="demo-page">
+        <div class="demo-bg-gradient" aria-hidden="true"></div>
+        <div class="demo-particles" aria-hidden="true" id="demoParticles"></div>
+        
+        <div class="demo-container">
+            <a href="https://app.gohighlevel.com/v2/preview/vUmgBLb12XCUamkZEvHY" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+                Back to Home
+            </a>
+            
+            <div class="demo-content">
+                <!-- Left Side - Info -->
+                <div class="demo-info">
+                    <h1><span class="gradient-text">Book a</span> <span class="orange-text">Strategy Call</span></h1>
+                    <p>See how AI voice automation helps local businesses respond instantly, capture more leads, and never miss opportunities.</p>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="trust-text">Instant AI Lead Response</span>
+                        </div>
+                        
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="trust-text">Missed Call Automation</span>
+                        </div>
+                        
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="trust-text">24/7 AI Voice Assistant</span>
+                        </div>
+                        
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="trust-text">Built for Local Businesses</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Embedded Calendar -->
+                <div class="demo-form-card">
+                    <div class="form-header">
+                        <h2>Schedule your <span style="color: #FF7A00;">call</span></h2>
+                        <p>Choose your preferred date and time below</p>
+                    </div>
+                    
+                    <!-- GHL Calendar Embed Container -->
+                    <div id="ghl-calendar-container" class="ghl-calendar-wrapper">
+                        <iframe 
+                            src="https://api.leadconnectorhq.com/widget/booking/2mZD6WNdi0Saqe9nktpA?primaryColor=%234A9EFF&accentColor=%23FF7A00&backgroundColor=%23ffffff&textColor=%230a2d6e" 
+                            style="width: 100%; height: 100%; min-height: 900px; border: none; border-radius: 12px;"
+                            scrolling="yes"
+                            id="ghl-calendar-iframe"
+                            title="Book Your Strategy Call"
+                            allow="payment"
+                        ></iframe>
+                    </div>
+                    
+                    <!-- Loading State -->
+                    <div id="calendar-loading" class="calendar-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading calendar...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        /*
+         * EMAIL DELIVERY SETUP INSTRUCTIONS
+         * ==================================
+         * 
+         * This form uses multiple email delivery methods for reliability:
+         * 
+         * METHOD 1: FormSubmit.co (Currently Active - No Setup Required)
+         * - Free service that sends emails directly
+         * - Already configured with Info@localleadresponse.ai
+         * - Should work immediately after first submission
+         * - First submission will send a confirmation email to verify the address
+         * 
+         * METHOD 2: GoHighLevel Webhook (Recommended for GHL Users)
+         * - Replace 'YOUR_WEBHOOK_ID' with your actual GHL webhook ID
+         * - Get webhook from: GHL Settings > Integrations > Webhooks
+         * - Format: https://services.leadconnectorhq.com/hooks/WEBHOOK_ID
+         * 
+         * METHOD 3: Web3Forms (Optional Backup)
+         * - Get free API key from: https://web3forms.com
+         * - Replace 'YOUR_WEB3FORMS_KEY' with your actual key
+         * 
+         * TROUBLESHOOTING:
+         * - Check browser console (F12) for error messages
+         * - Verify email isn't in spam/junk folder
+         * - FormSubmit requires email verification on first use
+         * - Test with multiple email addresses
+         * 
+         * CURRENT STATUS: Using FormSubmit.co as primary method
+         */
+        
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('demoParticles');
+            if (!particlesContainer) return;
+            
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${20 + Math.random() * 10}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        createParticles();
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+        }
+
+        // GHL Calendar Loading Handler
+        const calendarIframe = document.getElementById('ghl-calendar-iframe');
+        const calendarLoading = document.getElementById('calendar-loading');
+        
+        // Hide loading spinner when iframe loads
+        if (calendarIframe) {
+            calendarIframe.addEventListener('load', function() {
+                setTimeout(() => {
+                    if (calendarLoading) {
+                        calendarLoading.classList.add('hidden');
+                    }
+                    console.log('GHL Calendar loaded successfully');
+                    
+                    // Try to apply custom theme to iframe (if same-origin allows)
+                    try {
+                        const iframeDoc = calendarIframe.contentDocument || calendarIframe.contentWindow.document;
+                        if (iframeDoc) {
+                            // Inject custom CSS for theme matching
+                            const style = iframeDoc.createElement('style');
+                            style.textContent = `
+                                /* Custom theme to match website */
+                                button[type="submit"], .submit-button, .book-button {
+                                    background: linear-gradient(135deg, #FF7A00 0%, #ff9933 100%) !important;
+                                    color: white !important;
+                                    border: none !important;
+                                    padding: 14px 32px !important;
+                                    border-radius: 12px !important;
+                                    font-weight: 600 !important;
+                                    font-size: 16px !important;
+                                    cursor: pointer !important;
+                                    transition: all 0.3s ease !important;
+                                }
+                                button[type="submit"]:hover, .submit-button:hover, .book-button:hover {
+                                    transform: translateY(-2px) !important;
+                                    box-shadow: 0 8px 24px rgba(255, 122, 0, 0.4) !important;
+                                }
+                                .calendar-day.selected {
+                                    background: #4A9EFF !important;
+                                    color: white !important;
+                                }
+                                .time-slot.selected {
+                                    background: #4A9EFF !important;
+                                    border-color: #4A9EFF !important;
+                                }
+                            `;
+                            iframeDoc.head.appendChild(style);
+                            console.log('Custom theme applied to calendar');
+                        }
+                    } catch (e) {
+                        // Cross-origin restriction - theme must be set in GHL settings
+                        console.log('Calendar theme controlled by GHL settings (cross-origin)');
+                    }
+                }, 500);
+            });
+            
+            // Fallback: hide loading after 3 seconds even if load event doesn't fire
+            setTimeout(() => {
+                if (calendarLoading) {
+                    calendarLoading.classList.add('hidden');
+                }
+            }, 3000);
+        }
+        
+        // Listen for messages from GHL iframe (booking confirmations)
+        window.addEventListener('message', function(event) {
+            // Check if message is from GHL
+            if (event.origin.includes('leadconnectorhq.com')) {
+                console.log('Message from GHL:', event.data);
+                
+                // Handle booking confirmation
+                if (event.data.type === 'booking_confirmed' || event.data.status === 'success') {
+                    console.log('Booking confirmed!', event.data);
+                    // You can add custom success handling here
+                }
+            }
+        });
+    </script>
+</body>
+</html>

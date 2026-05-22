@@ -1,0 +1,19 @@
+{
+  "name": "local-lead-response",
+  "version": "1.0.0",
+  "description": "AI Lead Response System Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "start": "npx live-server --port=3000 --open=/index.html",
+    "demo": "npx live-server --port=3000 --open=/demo.html"
+  },
+  "keywords": [
+    "landing-page",
+    "ai",
+    "lead-response"
+  ],
+  "author": "Local Lead Response",
+  "license": "MIT",
+  "devDependencies": {}
+}
